@@ -5,15 +5,6 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ahmadrivaldi-arv/mekarisign/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ahmadrivaldi-arv/mekarisign/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ahmadrivaldi-arv/mekarisign.svg?style=flat-square)](https://packagist.org/packages/ahmadrivaldi-arv/mekarisign)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/mekarisign.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/mekarisign)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
@@ -40,20 +31,36 @@ This is the contents of the published config file:
 
 ```php
 return [
+
+    /**
+     * API endpoint mekari sign
+     */
+    "base_url" => env("MEKARISIGN_BASE_URL", "https://sandbox-api.mekari.com/v2/esign/v1"),
+
+    /**
+     * API client id from [developers,sandbox].mekarisign.com
+     */
+    "client_id" => env("MEKARISIGN_CLIENT_ID"),
+
+    /**
+     * API client secret from [developers,sandbox].mekarisign.com
+     */
+    "client_secret" => env("MEKARISIGN_CLIENT_SECRET"),
+
+    "template_id" => env("MEKARISIGN_TEMPLATE_ID"),
 ];
 ```
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="mekarisign-views"
-```
 
 ## Usage
 
+see [Mekari Sign Documentation](https://documenter.getpostman.com/view/21582074/2s93K1oecc#5e54a637-aede-40f4-b07e-aa89e9ac146e) for the payloads
+
 ```php
-$mekariSign = new Ahmdrv\MekariSign();
-echo $mekariSign->echoPhrase('Hello, Ahmdrv!');
+$psreAutoSign = new \Ahmdrv\MekariSign\MekariSign;
+$payload = []; // see mekari documentation
+
+$pasreAutoSign->requestPsreSign($payload);
 ```
 
 ## Testing
