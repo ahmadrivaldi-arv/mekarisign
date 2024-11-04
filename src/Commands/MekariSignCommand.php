@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Ahmdrv\MekariSign\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class MekariSignCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'mekarisign';
 
     public $description = 'My command';
 
