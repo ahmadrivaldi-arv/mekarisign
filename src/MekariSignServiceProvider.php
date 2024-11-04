@@ -2,9 +2,9 @@
 
 namespace Ahmdrv\MekariSign;
 
+use Ahmdrv\MekariSign\Commands\MekariSignCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Ahmdrv\MekariSign\Commands\MekariSignCommand;
 
 class MekariSignServiceProvider extends PackageServiceProvider
 {

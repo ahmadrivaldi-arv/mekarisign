@@ -2,9 +2,9 @@
 
 namespace Ahmdrv\MekariSign\Tests;
 
+use Ahmdrv\MekariSign\MekariSignServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Ahmdrv\MekariSign\MekariSignServiceProvider;
 
 class TestCase extends Orchestra
 {
