@@ -17,9 +17,9 @@ class MekariSignServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('mekarisign')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_mekarisign_table')
-            ->hasCommand(MekariSignCommand::class);
+            ->hasConfigFile();
+        // ->hasViews()
+        // ->hasMigration('create_mekarisign_table')
+        // ->hasCommand(MekariSignCommand::class);
     }
 }
