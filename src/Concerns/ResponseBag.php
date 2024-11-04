@@ -9,15 +9,12 @@ trait ResponseBag
 {
     /**
      * The last response received from a request.
-     *
-     * @var Response|null
      */
     protected ?Response $response = null;
 
     /**
      * Store the response after a request.
      *
-     * @param Response $response
      * @return void
      */
     protected function storeResponse(Response $response): Response
@@ -29,8 +26,6 @@ trait ResponseBag
 
     /**
      * Get the last stored response.
-     *
-     * @return Response|null
      */
     public function getResponse(): ?Response
     {
@@ -39,18 +34,14 @@ trait ResponseBag
 
     /**
      * Get the response data in array format, if available.
-     *
-     * @return Collection|null
      */
     public function getResponseData(): ?Collection
     {
-        return $this->response?->collect("data");
+        return $this->response?->collect('data');
     }
 
     /**
      * Get the response status code, if available.
-     *
-     * @return int|null
      */
     public function getResponseStatusCode(): ?int
     {
@@ -59,6 +50,6 @@ trait ResponseBag
 
     public function getDocumentId(): string
     {
-        return $this->getResponseData()->get("id");
+        return $this->getResponseData()->get('id');
     }
 }
