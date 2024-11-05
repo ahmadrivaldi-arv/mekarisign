@@ -11,6 +11,6 @@ class MekariSign extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return 'mekarisign';
+        return \Ahmdrv\MekariSign\MekariSign::class;
     }
 }
