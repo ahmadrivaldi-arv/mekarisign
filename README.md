@@ -14,12 +14,6 @@ You can install the package via composer:
 composer require ahmadrivaldi-arv/mekarisign
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="mekarisign-migrations"
-php artisan migrate
-```
 
 You can publish the config file with:
 
