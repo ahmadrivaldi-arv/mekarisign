@@ -6,8 +6,6 @@ namespace Ahmdrv\MekariSign\Services;
  * Class DocumentRequest
  *
  * This class is responsible for handling document requests.
- *
- * @package Ahmdrv\MekariSign\Services
  */
 class DocumentRequest
 {
@@ -32,7 +30,7 @@ class DocumentRequest
     protected string $content = '';
 
     /**
-     * @var array $signers
+     * @var array
      *
      * An array that holds the list of signers for the document request.
      */
@@ -41,19 +39,17 @@ class DocumentRequest
     /**
      * DocumentRequest constructor.
      *
-     * @param string|null $documentName The name of the document.
+     * @param  string|null  $documentName  The name of the document.
      */
-    public function __construct(string $documentName = null)
+    public function __construct(?string $documentName = null)
     {
         $this->documentName = $documentName;
     }
 
-
     /**
      * Create a new DocumentRequest instance.
      *
-     * @param string $documentName The name of the document.
-     * @return static
+     * @param  string  $documentName  The name of the document.
      */
     public static function make(string $documentName): static
     {
@@ -63,7 +59,7 @@ class DocumentRequest
     /**
      * Sets the content for the document request.
      *
-     * @param string $content The content to be set, encoded as a base64 string representing a PDF.
+     * @param  string  $content  The content to be set, encoded as a base64 string representing a PDF.
      * @return static Returns the current instance for method chaining.
      */
     public function setContent(string $content): static
@@ -76,8 +72,7 @@ class DocumentRequest
     /**
      * Set the template ID.
      *
-     * @param string $templateId The ID of the template.
-     * @return static
+     * @param  string  $templateId  The ID of the template.
      */
     public function setTemplate(string $templateId): static
     {
@@ -89,8 +84,7 @@ class DocumentRequest
     /**
      * Set the callback URL.
      *
-     * @param string|null $url The callback URL.
-     * @return static
+     * @param  string|null  $url  The callback URL.
      */
     public function setCallbackUrl(?string $url): static
     {
@@ -108,8 +102,6 @@ class DocumentRequest
 
     /**
      * Convert the DocumentRequest instance to an array.
-     *
-     * @return array
      */
     public function toArray(): array
     {
@@ -118,7 +110,7 @@ class DocumentRequest
             'filename' => $this->documentName,
             'template_id' => $this->templateId,
             'callback_url' => $this->callbackUrl,
-            'signers' => $this->signers
+            'signers' => $this->signers,
         ];
     }
 }

@@ -7,8 +7,6 @@ namespace Ahmdrv\MekariSign\Services;
  *
  * This class represents an annotation with various properties such as page number,
  * position coordinates, element dimensions, canvas dimensions, and type.
- *
- * @package Ahmdrv\MekariSign\Services
  */
 class Annotation
 {
@@ -55,25 +53,18 @@ class Annotation
     /**
      * Annotation constructor.
      */
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     /**
      * Creates a new instance of the Annotation class.
-     *
-     * @return static
      */
     public static function make(): static
     {
-        return new static();
+        return new static;
     }
 
     /**
      * Sets the page number for the annotation.
-     *
-     * @param int $page
-     * @return static
      */
     public function setPage(int $page): static
     {
@@ -85,8 +76,8 @@ class Annotation
     /**
      * Sets the X and Y coordinate positions for the annotation.
      *
-     * @param int $x The X coordinate position.
-     * @param int $y The Y coordinate position.
+     * @param  int  $x  The X coordinate position.
+     * @param  int  $y  The Y coordinate position.
      * @return static Returns the current instance for method chaining.
      */
     public function setPosition(int $x, int $y): static
@@ -100,8 +91,8 @@ class Annotation
     /**
      * Set the size of the element.
      *
-     * @param int $width The width of the element.
-     * @param int $height The height of the element.
+     * @param  int  $width  The width of the element.
+     * @param  int  $height  The height of the element.
      * @return static Returns the instance of the class for method chaining.
      */
     public function setElementSize(int $width, int $height): static
@@ -115,8 +106,8 @@ class Annotation
     /**
      * Set the size of the canvas.
      *
-     * @param int $width The width of the canvas.
-     * @param int $height The height of the canvas.
+     * @param  int  $width  The width of the canvas.
+     * @param  int  $height  The height of the canvas.
      * @return static Returns the instance of the class for method chaining.
      */
     public function setCanvasSize(int $width, int $height): static
@@ -129,9 +120,6 @@ class Annotation
 
     /**
      * Sets the type of the annotation.
-     *
-     * @param string $typeOf
-     * @return static
      */
     public function setTypeOf(string $typeOf): static
     {
@@ -142,8 +130,6 @@ class Annotation
 
     /**
      * Converts the annotation properties to an associative array.
-     *
-     * @return array
      */
     public function toArray(): array
     {

@@ -40,7 +40,6 @@ trait ResponseBag
         return $this->response?->collect('data');
     }
 
-
     /**
      * Get the status code from the response.
      *
