@@ -141,7 +141,7 @@ class Annotation
             'element_height' => $this->elementHeight,
             'canvas_width' => $this->canvasWidth,
             'canvas_height' => $this->canvasHeight,
-            'typeOf' => $this->typeOf,
+            'type_of' => $this->typeOf,
         ];
     }
 }
