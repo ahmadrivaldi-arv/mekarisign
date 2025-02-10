@@ -40,15 +40,26 @@ trait ResponseBag
         return $this->response?->collect('data');
     }
 
+
     /**
-     * Get the response status code, if available.
+     * Get the status code from the response.
+     *
+     * This method retrieves the status code from the response object.
+     * If the response object is not set, it returns null.
+     *
+     * @return int|null The status code of the response, or null if the response is not set.
      */
     public function getResponseStatusCode(): ?int
     {
         return $this->response?->status();
     }
 
-    public function getDocumentId(): string
+    /**
+     * Retrieve the document ID from the response data.
+     *
+     * @return string|null The document ID if available, or null if not present.
+     */
+    public function getDocumentId(): ?string
     {
         return $this->getResponseData()->get('id');
     }
