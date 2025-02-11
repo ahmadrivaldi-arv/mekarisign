@@ -44,6 +44,8 @@ class DocumentRequest
     public function __construct(?string $documentName = null)
     {
         $this->documentName = $documentName;
+
+        $this->callbackUrl = config('mekarisign.callback_url');
     }
 
     /**
@@ -88,7 +90,7 @@ class DocumentRequest
      */
     public function setCallbackUrl(?string $url): static
     {
-        $this->callbackUrl = $url ?? config('mekarisign.callback_url');
+        $this->callbackUrl = $url;
 
         return $this;
     }
