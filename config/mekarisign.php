@@ -68,7 +68,6 @@ return [
      * This configuration option sets the timeout duration (in seconds) for HTTP requests made by the MekariSign service.
      * The value is retrieved from the environment variable 'MEKARISIGN_HTTP_REQUEST_TIMEOUT'. If the environment variable
      * is not set, the default timeout duration is 60 seconds.
-     *
      */
-    'http_request_timeout' => env('MEKARISIGN_HTTP_REQUEST_TIMEOUT',60)
+    'http_request_timeout' => env('MEKARISIGN_HTTP_REQUEST_TIMEOUT', 60),
 ];

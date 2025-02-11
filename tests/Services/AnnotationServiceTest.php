@@ -21,7 +21,7 @@ it('can convert to array', function () {
             'element_width',
             'element_height',
             'canvas_width',
-            'canvas_height'
+            'canvas_height',
         ]);
 });
 
