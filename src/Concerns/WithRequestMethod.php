@@ -38,7 +38,9 @@ trait WithRequestMethod
      */
     public function request(string $method, string $path, array $data = []): Response
     {
-        $http = Http::baseUrl($this->baseUrl);
+        $http = Http::timeout(config('mekarisign.http_request_timeout'))
+            ->baseUrl($this->baseUrl);
+
         $headers = $this->headers($method, $path);
 
         return $http->withHeaders($headers)->{$method}($path, $data);
