@@ -2,6 +2,8 @@
 
 namespace Ahmdrv\MekariSign\Services;
 
+use InvalidArgumentException;
+
 /**
  * Class Annotation
  *
@@ -53,7 +55,9 @@ class Annotation
     /**
      * Annotation constructor.
      */
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     /**
      * Creates a new instance of the Annotation class.
@@ -123,6 +127,14 @@ class Annotation
      */
     public function setTypeOf(string $typeOf): static
     {
+        $allowedTypes = ['signature', 'materai', 'initial'];
+
+        if (!in_array($typeOf, $allowedTypes)) {
+            throw new InvalidArgumentException(
+            sprintf("type_of must be one of: %s", implode(', ', $allowedTypes))
+            );
+        }
+
         $this->typeOf = $typeOf;
 
         return $this;
