@@ -66,6 +66,7 @@ class Signer
      * Set the email of the signer.
      *
      * @param  string  $email  The email of the signer.
+     *
      * @throws \InvalidArgumentException
      */
     public function setEmail(string $email): self
