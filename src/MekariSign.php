@@ -45,17 +45,15 @@ class MekariSign
     {
         $response = $this->post('/psre_auto_sign/activate', [
             'email' => $email,
-        ])->getResponse()->json();
+        ])->getResponse();
 
-        if (isset($response['error']) && $response['error'] === true) {
-
-            $error = collect($response)->__toString();
-
-            throw new Exception("Request error: $error");
+        if ($response->successful()) {
+            return $response->json('data.auth_url');
         }
 
-        if (isset($response['auth_url'])) {
-            return $response['auth_url'];
+        if ($response->failed()) {
+            $message = $response->json('data.message');
+            throw new Exception("Unable to activate AutoSign. Response body: $message");
         }
 
         return null;
