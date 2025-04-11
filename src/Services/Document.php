@@ -10,11 +10,10 @@ class Document
 
     protected array $document = [];
 
-
     public function getDocumentId(): ?string
     {
         if (empty($this->document)) {
-            throw new \Exception("Unable to get detail of document");
+            throw new \Exception('Unable to get detail of document');
         }
 
         return $this->document['data']['id'];
@@ -24,7 +23,7 @@ class Document
     /**
      * Create a new instance of the class with the given document ID.
      *
-     * @param string $documentId The ID of the document.
+     * @param  string  $documentId  The ID of the document.
      * @return static A new instance of the class.
      */
     public static function of(string $documentId): static
@@ -43,7 +42,6 @@ class Document
     {
         return $this->get("/documents/{$this->getDocumentId()}/download");
     }
-
 
     /**
      * Delete the document by moving it to trash.
@@ -65,7 +63,7 @@ class Document
      *
      * @return array|null An array of signers or null if no signers are found.
      */
-    public function getSigner(): array|null
+    public function getSigner(): ?array
     {
         return $this->document['data']['attributes']['signers'];
     }
@@ -75,8 +73,7 @@ class Document
 
         $response = $this->get("/documents/{$documentId}")->getResponse();
 
-        if (!$response->successful()) {
-
+        if (! $response->successful()) {
 
             $message = $response->json('data')['message'];
 
