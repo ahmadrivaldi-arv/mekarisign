@@ -31,6 +31,16 @@ trait WithRequestMethod
     }
 
     /**
+     * Make a DELETE request
+     */
+    public function delete(string $path, array $data = []): self
+    {
+        $this->response = $this->request('DELETE', $path, $data);
+
+        return $this;
+    }
+
+    /**
      * Create http request
      *
      *

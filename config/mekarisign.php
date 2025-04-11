@@ -10,7 +10,7 @@ return [
      * variable `MEKARISIGN_BASE_URL`. If the environment variable is not set,
      * it defaults to 'https://sandbox-api.mekari.com/v2/esign/v1'.
      */
-    'base_url' => env('MEKARISIGN_BASE_URL', 'https://sandbox-api.mekari.com/v2/esign/v1'),
+    'base_url' => env('MEKARISIGN_BASE_URL', 'https://sandbox-api.mekari.com/v2/esign-hmac/v1'),
 
     /**
      * Configuration file for MekariSign integration.
@@ -19,7 +19,7 @@ return [
      *
      * The client ID for the MekariSign service, retrieved from the environment variable 'MEKARISIGN_CLIENT_ID'.
      */
-    'client_id' => env('MEKARISIGN_CLIENT_ID'),
+    'client_id' => env('MEKARISIGN_CLIENT_ID', 'oKVhNxVpwAQJcQrG'),
 
     /**
      * The client secret for the MekariSign API.
@@ -27,7 +27,7 @@ return [
      * This value is retrieved from the environment configuration using the key 'MEKARISIGN_CLIENT_SECRET'.
      * Ensure that the environment variable is set correctly in your .env file.
      */
-    'client_secret' => env('MEKARISIGN_CLIENT_SECRET'),
+    'client_secret' => env('MEKARISIGN_CLIENT_SECRET', '6JUU84LiB3CdnGzXYSWuynXFCRB9VJvv'),
 
     /**
      * The client secret for the MekariSign service.
@@ -35,7 +35,7 @@ return [
      * This value is retrieved from the environment variable 'MEKARISIGN_CLIENT_SECRET'.
      * It is used to authenticate requests to the MekariSign API.
      */
-    'template_id' => env('MEKARISIGN_TEMPLATE_ID'),
+    'template_id' => env('MEKARISIGN_TEMPLATE_ID', '2970c06c-7e40-4d96-a2ed-80547b610f63'),
 
     /**
      * Configuration for MekariSign signer name.
@@ -43,7 +43,7 @@ return [
      * This value is retrieved from the environment variable 'MEKARISIGN_SIGNER_NAME'.
      * It is used to specify the name of the signer in the MekariSign service.
      */
-    'signer_name' => env('MEKARISIGN_SIGNER_NAME'),
+    'signer_name' => env('MEKARISIGN_SIGNER_NAME', 'DHARMA ORATMANGUN'),
 
     /**
      * The email address of the signer.
@@ -52,7 +52,7 @@ return [
      * variable 'MEKARISIGN_SIGNER_EMAIL'. It is used to identify the signer in the MekariSign
      * service.
      */
-    'signer_email' => env('MEKARISIGN_SIGNER_EMAIL'),
+    'signer_email' => env('MEKARISIGN_SIGNER_EMAIL', 'sosmed456@gmail.com'),
 
     /**
      * The callback URL for MekariSign.
